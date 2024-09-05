@@ -48,6 +48,10 @@ The data used in this project consists of multispectral and optical images, alon
 ```
 ## Results
 The notebook provides visualizations of the segmentation results, comparing the predicted masks with the ground truth labels.
+![The Results of the model](image.png)
+
+## confusion matrix
+![confusion matrix](image-1.png)
 
 ## Contributing
 If you would like to contribute to this project, please fork the repository and submit a pull request with your changes.
