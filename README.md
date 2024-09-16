@@ -46,12 +46,41 @@ The data used in this project consists of multispectral and optical images, alon
     /labels
     /labelsAfterEdit
 ```
+
+
+
 ## Results
 The notebook provides visualizations of the segmentation results, comparing the predicted masks with the ground truth labels.
 ![The Results of the model](image.png)
 
+
+
+
 ## confusion matrix
-![confusion matrix](image-1.png)
+![confusion matrix](image-1.g)
+
+
+
+## API Flask Implementation
+
+The Flask API allows users to interact with the water segmentation model via a web interface. This implementation provides endpoints for uploading images and retrieving segmentation results.
+
+### Features
+- **Image Upload**: Users can upload multispectral images for segmentation.
+- **Segmentation Results**: The API returns the segmented images as well as the original uploaded images.
+
+### Setup
+
+1. **Install Flask and Dependencies**
+
+   Ensure you have Flask installed. You can install Flask and other required packages using pip:
+
+   ```bash
+   pip install Flask
+
+## API Flask Implementation 
+![API Flask](Project Final Output.png)
+
 
 ## Contributing
 If you would like to contribute to this project, please fork the repository and submit a pull request with your changes.
