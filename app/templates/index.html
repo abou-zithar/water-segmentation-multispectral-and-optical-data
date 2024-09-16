@@ -1,0 +1,169 @@
+<title>Image Segmentation App</title>
+<link rel="icon" href="/static/logo/logo.svg" type="image/x-icon">
+
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #06575ba5);
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-weight: 300;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navbar styling */
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        nav img {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #74ebd5;
+        }
+
+        
+        form {
+            margin: 20px 0 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: none;
+            background-color: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            padding: 12px 25px;
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0055cc;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .image-container div {
+            text-align: center;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar with logo -->
+    <nav>
+        <a href="/">
+            <img src="/static/logo/logo.svg" alt="Logo", style="width: 600px; height: 100px;">
+        </a>
+       
+        
+    </nav>
+
+    <h1 id="upload" style="margin-top: 200px;">Upload an Image for Segmentation</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Upload Image">
+    </form>
+
+    {% if uploaded_image %}
+    <div class="image-container">
+        <div>
+            <h2>Uploaded Image {{input_image_name}}:</h2>
+            <img src="{{uploaded_image}}" alt="Uploaded Image" style="width: 400px; height: 400px;">
+        </div>
+        <div>
+            <h2>Segmented Image {{output_image_name}}:</h2>
+            <img src="{{segmented_image}}" alt="Segmented Image" style="width: 500px; height: 500px">
+        </div>
+    </div>
+    {% endif %}
+
+    <footer>
+        <p>Built with ❤️ by Mahmoud Ahmed</p>
+    </footer>
+</body>
+</html>
