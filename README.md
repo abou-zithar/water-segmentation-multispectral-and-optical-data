@@ -57,7 +57,7 @@ The notebook provides visualizations of the segmentation results, comparing the 
 
 
 ## confusion matrix
-![confusion matrix](image-1.g)
+![confusion matrix](image-1.png)
 
 
 
@@ -79,7 +79,7 @@ The Flask API allows users to interact with the water segmentation model via a w
    pip install Flask
 
 ## API Flask Implementation 
-![API Flask](Project Final Output.png)
+![API Flask](Project-Final-Output.png)
 
 
 ## Contributing
